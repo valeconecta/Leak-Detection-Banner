@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #003366;
+  --color-brand-light: #00AEEF;
+  --color-brand-gray: #E5E7EB;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-white overflow-x-hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.btn-primary {
+  @apply bg-brand-dark text-white px-6 py-3 rounded-full font-semibold transition-all hover:bg-brand-light hover:shadow-lg active:scale-95;
+}
+
+.btn-secondary {
+  @apply border-2 border-brand-dark text-brand-dark px-6 py-3 rounded-full font-semibold transition-all hover:bg-brand-dark hover:text-white active:scale-95;
+}
